@@ -23,6 +23,13 @@ docker-compose run web rails db:create
 * 起動
 docker-compose up
 
+* コンソールに接続
+1. アプリサーバ
+docker-compose run web bash
+
+1. DBサーバー
+docker-compose run db bash
+
 * テストスイートの実行方法
 
 * サービス（jobキュー、キャッシュサーバー、検索エンジンなど）
