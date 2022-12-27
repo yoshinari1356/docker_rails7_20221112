@@ -1,0 +1,26 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>common chat</h1>
+
+<div id="common_chat">
+  <% @users.each do |user| %>
+    <div>
+      <%= render user %>
+      <p>
+        <%= link_to "Show this user", user %>
+      </p>
+      <div class="send_comment" data-user-id="<%= user.id %>">
+        <textarea chat-send-textarea ></textarea>
+        <button chat-send-btn data-user-name="<%= user.name %>">送信</button>
+      </div>
+    </div>
+  <% end %>
+  
+</div>
+
+<%= link_to "New user", new_user_path %>
+<div data-chat-room="common"></div>
+
+<script type="module">
+  import "channels/chat_channel"
+</script>
